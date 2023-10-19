@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://mdDicta2023:YtTQsy7uWbkKyR7U@dicta.3pwgqtl.mongodb.net/bddictacolombia?retryWrites=true&w=majority
