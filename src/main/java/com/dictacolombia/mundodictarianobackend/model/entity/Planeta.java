@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
@@ -17,6 +16,5 @@ public class Planeta {
 
     private String textura;
 
-    @Field(name = "sistema_planetario_id")
     private String sistemaPlanetarioId;
 }

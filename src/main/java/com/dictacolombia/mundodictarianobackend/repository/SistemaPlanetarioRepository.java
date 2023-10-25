@@ -7,6 +7,6 @@ import org.springframework.data.mongodb.repository.Query;
 import java.util.Optional;
 
 public interface SistemaPlanetarioRepository extends MongoRepository<SistemaPlanetario, String> {
-    @Query("{ 'galaxia_id' : ?0 }")
+    @Query("{ 'galaxiaId' : ?0 }")
     Optional<SistemaPlanetario> getByGalaxia(String galaxiaId);
 }

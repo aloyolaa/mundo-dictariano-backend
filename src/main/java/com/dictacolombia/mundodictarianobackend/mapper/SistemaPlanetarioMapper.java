@@ -2,13 +2,15 @@ package com.dictacolombia.mundodictarianobackend.mapper;
 
 import com.dictacolombia.mundodictarianobackend.model.dto.SistemaPlanetarioDto;
 import com.dictacolombia.mundodictarianobackend.model.entity.SistemaPlanetario;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ReportingPolicy;
+import org.springframework.stereotype.Service;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
-public interface SistemaPlanetarioMapper {
-    SistemaPlanetario toEntity(SistemaPlanetarioDto sistemaPlanetarioDto);
-
-    SistemaPlanetarioDto toDto(SistemaPlanetario sistemaPlanetario);
+@Service
+public class SistemaPlanetarioMapper {
+    public SistemaPlanetarioDto toSistemaPlanetarioDto(SistemaPlanetario sistemaPlanetario) {
+        return new SistemaPlanetarioDto(
+                sistemaPlanetario.getId(),
+                sistemaPlanetario.getNombre(),
+                sistemaPlanetario.getDescripcion()
+        );
+    }
 }

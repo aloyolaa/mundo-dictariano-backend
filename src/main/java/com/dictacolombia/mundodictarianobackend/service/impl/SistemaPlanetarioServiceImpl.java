@@ -20,7 +20,7 @@ public class SistemaPlanetarioServiceImpl implements SistemaPlanetarioService {
     public SistemaPlanetarioDto getByGalaxia(String galaxiaId) {
         try {
             return sistemaPlanetarioRepository.getByGalaxia(galaxiaId)
-                    .map(sistemaPlanetarioMapper::toDto)
+                    .map(sistemaPlanetarioMapper::toSistemaPlanetarioDto)
                     .orElseThrow(DataNotFound::new);
         } catch (DataAccessException e) {
             throw new DataAccessExceptionImpl(e);

@@ -22,7 +22,7 @@ public class GalaxiaServiceImpl implements GalaxiaService {
         try {
             return galaxiaRepository.findAll()
                     .stream()
-                    .map(galaxiaMapper::toDto)
+                    .map(galaxiaMapper::toGalaxiaDto)
                     .toList();
         } catch (DataAccessException e) {
             throw new DataAccessExceptionImpl(e);

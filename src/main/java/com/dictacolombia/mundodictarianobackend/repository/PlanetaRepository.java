@@ -7,6 +7,6 @@ import org.springframework.data.mongodb.repository.Query;
 import java.util.List;
 
 public interface PlanetaRepository extends MongoRepository<Planeta, String> {
-    @Query("{ 'sistema_planetario_id' : ?0 }")
+    @Query("{ 'sistemaPlanetarioId' : ?0 }")
     List<Planeta> getBySistemaPlanetario(String sistemaPlanetarioId);
 }
