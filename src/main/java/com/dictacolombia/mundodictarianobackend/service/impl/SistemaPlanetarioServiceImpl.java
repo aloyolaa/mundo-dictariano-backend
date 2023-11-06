@@ -4,6 +4,7 @@ import com.dictacolombia.mundodictarianobackend.exception.DataAccessExceptionImp
 import com.dictacolombia.mundodictarianobackend.exception.DataNotFound;
 import com.dictacolombia.mundodictarianobackend.mapper.SistemaPlanetarioMapper;
 import com.dictacolombia.mundodictarianobackend.model.dto.SistemaPlanetarioDto;
+import com.dictacolombia.mundodictarianobackend.model.entity.SistemaPlanetario;
 import com.dictacolombia.mundodictarianobackend.repository.SistemaPlanetarioRepository;
 import com.dictacolombia.mundodictarianobackend.service.SistemaPlanetarioService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,16 @@ import org.springframework.stereotype.Service;
 public class SistemaPlanetarioServiceImpl implements SistemaPlanetarioService {
     private final SistemaPlanetarioRepository sistemaPlanetarioRepository;
     private final SistemaPlanetarioMapper sistemaPlanetarioMapper;
+
+    @Override
+    public SistemaPlanetario getOne(String id) {
+        try {
+            return sistemaPlanetarioRepository.findById(id)
+                    .orElseThrow(DataNotFound::new);
+        } catch (DataAccessException e) {
+            throw new DataAccessExceptionImpl(e);
+        }
+    }
 
     @Override
     public SistemaPlanetarioDto getByGalaxia(String galaxiaId) {
