@@ -1,3 +1,5 @@
+security.jwt.token.secret-key: $2a$10$DFqi90hnWV4ddkUfovtOmetPxnYUFCEyYZV4wiE45xH5a7eUpoUbS
+
 spring:
   data:
     mongodb:
